@@ -1,15 +1,18 @@
-import { ReactNode } from "react";
-import { Container } from "./styles";
-import { Text } from "react-native";
+import { ButtonText, Container, Icon } from "./styles";
+import { Text, TouchableOpacityProps } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons"
 
-interface ButtonProps {
-    text: string,
+interface ButtonProps extends TouchableOpacityProps {
+    text: string
+    icon?: keyof typeof MaterialIcons.glyphMap
+    variant?: "primary" | "secondary" 
 }
 
-export function Button({ text }: ButtonProps) {
+export function Button({ text, icon, variant = "primary", ...props }: ButtonProps) {
     return (
-        <Container>
-            <Text>{text}</Text>
+        <Container {...props}>
+            {icon && <Icon name={icon} />}
+            <ButtonText>{text}</ButtonText>
         </Container>
     )
 }

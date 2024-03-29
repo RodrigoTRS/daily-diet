@@ -1,23 +1,30 @@
-import { Avatar, AvatarText, Container, HomeHeader, Logo } from "./styles";
+import { ButtonWrapper, Container, HomeHeader, Logo, WrapperText } from "./styles";
 import LogoImg from "../../assets/Logo.png"
-import { Statistics } from "../../components/Statistics";
-import { Text } from "react-native";
+import { StatisticsBox } from "../../components/StatisticsBox";
 import { Button } from "../../components/Button";
+import { Avatar } from "../../components/Avatar";
+import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
+    const navigation = useNavigation()
+
     return (
         <Container>
             <HomeHeader>
                 <Logo source={LogoImg}/>
-                <Avatar>
-                    <AvatarText>R</AvatarText>
-                </Avatar>
+                <Avatar username="Rodrigoteix"/>
             </HomeHeader>
 
-            <Statistics percentage={90.86}/>
+            <StatisticsBox
+                percentage={90.86}
+                onPress={() => navigation.navigate("statistics")}
+                showIcon
+            />
 
-            <Text>Refeições</Text>
-            <Button text="Test"/>
+            <ButtonWrapper>
+                <WrapperText>Refeições</WrapperText>
+                <Button text="Nova refeição" icon="add"/>
+            </ButtonWrapper>
 
         </Container>
     )

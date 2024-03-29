@@ -19,15 +19,12 @@ export const Logo = styled.Image`
     height: 36px;
 `
 
-export const Avatar = styled.View`
-    width: 36px;
-    height: 36px;
-    border-radius: 100%;
-    background-color: ${props => props.theme.colors["red-300"]};
-    align-items: center;
-    justify-content: center;
+export const ButtonWrapper = styled.View`
+    gap: 8px;
 `
 
-export const AvatarText = styled.Text`
-    color: ${props => props.theme.colors["red-700"]};
+export const WrapperText = styled.Text`
+    font-size: 16px;
+    color: ${props => props.theme.colors["gray-700"]};
+    font-family: ${props => props.theme.font.regular};
 `

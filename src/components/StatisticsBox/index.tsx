@@ -1,19 +1,21 @@
+import { TouchableOpacityProps } from "react-native";
 import { ArrowIcon, Container, Description, Percentage } from "./styles";
 
-interface StatisticsProps {
+interface StatisticsProps extends TouchableOpacityProps {
     percentage: number
+    showIcon?: boolean
 }
 
-export function Statistics({ percentage }: StatisticsProps) {
+export function StatisticsBox({ percentage, showIcon = false, ...props }: StatisticsProps) {
 
     const isSuccess = percentage > 50
     const normalizedPercentage = String(percentage).replace(".", ",").concat("%")
 
     return (
-        <Container success={isSuccess}>
+        <Container success={isSuccess} {...props}>
             <Percentage>{normalizedPercentage}</Percentage>
             <Description>das refeições dentro da dieta</Description>
-            <ArrowIcon success={isSuccess}/>
+            {showIcon && <ArrowIcon success={isSuccess}/>}
         </Container>
     )
 }
