@@ -22,7 +22,11 @@ export function Home() {
 
             <ButtonWrapper>
                 <WrapperText>Refeições</WrapperText>
-                <Button text="Nova refeição" icon="add"/>
+                <Button
+                    text="Nova refeição"
+                    icon="add"
+                    onPress={() => navigation.navigate("newMeal")}
+                />
             </ButtonWrapper>
 
         </Container>

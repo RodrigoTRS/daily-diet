@@ -13,7 +13,7 @@ export const Container = styled.View`
 
 export const PageTitle = styled.Text`
     font-family: ${props => props.theme.font.bold};
-    font-size: 16px;
+    font-size: 20px;
 `
 
 export const BackButton = styled.TouchableOpacity`
@@ -27,7 +27,7 @@ interface BackIconProps {
 }
 
 export const BackIcon = styled(MaterialIcons).attrs<BackIconProps>((props) => ({
-    size: 24,
+    size: 32,
     color: props.color === "red" ? props.theme.colors["red-700"]
         : props.color === "green" ? props.theme.colors["green-700"]
         : props.theme.colors["gray-700"]  
