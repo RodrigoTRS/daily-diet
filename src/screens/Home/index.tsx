@@ -1,6 +1,6 @@
 import { ButtonWrapper, Container, HomeHeader, Logo, WrapperText } from "./styles";
 import LogoImg from "../../assets/Logo.png"
-import { StatisticsBox } from "../../components/StatisticsBox";
+import { StatisticsButton } from "../../components/StatisticsButton";
 import { Button } from "../../components/Button";
 import { Avatar } from "../../components/Avatar";
 import { useNavigation } from "@react-navigation/native";
@@ -15,10 +15,9 @@ export function Home() {
                 <Avatar username="Rodrigoteix"/>
             </HomeHeader>
 
-            <StatisticsBox
+            <StatisticsButton
                 percentage={90.86}
                 onPress={() => navigation.navigate("statistics")}
-                showIcon
             />
 
             <ButtonWrapper>
